@@ -1,0 +1,6 @@
+# PyMuPDF==1.23.8  # Replaced with system mutool (mupdf-tools)
+# PySimpleGUI removed - using built-in tkinter instead
+
+# System dependencies:
+# - mupdf-tools (provides mutool for PDF text extraction)
+# - python3-tk (provides tkinter for GUI)
