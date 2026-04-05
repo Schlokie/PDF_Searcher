@@ -72,6 +72,21 @@ Or use the shell script (Unix-like systems):
 ./run_pdf_searcher.sh
 ```
 
+### Command-line Options
+
+You can specify a default folder to search in via command line:
+
+```bash
+python3 pdf_searcher.py --folder /path/to/your/pdf/folder
+```
+
+Or with the shell script:
+```bash
+./run_pdf_searcher.sh --folder /path/to/your/pdf/folder
+```
+
+This will pre-populate the folder field and start caching PDFs from that location automatically.
+
 ### Using the GUI
 
 1. **Select Folder**: Click "Browse" to choose the folder containing PDFs

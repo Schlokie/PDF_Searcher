@@ -16,6 +16,7 @@ import re
 import subprocess
 from pathlib import Path
 from typing import List, Dict, Optional
+import argparse
 
 from src.pdf_handler import search_all_pdfs_in_folder
 from src.utils import open_pdf_at_page
@@ -121,7 +122,7 @@ def _get_context_around_match(text: str, match, context_chars: int = 60) -> str:
     return f"...{before}{match_text}{after}..."
 
 
-def create_gui():
+def create_gui(default_folder=None):
     """Create the main tkinter GUI."""
     root = tk.Tk()
     root.title("PDF Searcher")
@@ -368,7 +369,8 @@ def create_gui():
     status_label.pack(fill=tk.X, padx=10)
 
     # Set default folder and preload cache in background
-    default_folder = "/home/klem/Funk/cqdl"
+    if default_folder is None:
+        default_folder = "/home/klem/Funk/cqdl"
     if Path(default_folder).exists():
         folder_var.set(default_folder)
         # Start caching in background thread
@@ -446,7 +448,11 @@ def perform_search(
 
 def main():
     """Main application entry point."""
-    root = create_gui()
+    parser = argparse.ArgumentParser(description="PDF Searcher")
+    parser.add_argument('--folder', type=str, help='Default folder to search in')
+    args = parser.parse_args()
+    
+    root = create_gui(default_folder=args.folder)
     root.mainloop()
 
 
