@@ -2,6 +2,9 @@
 
 A cross-platform desktop tool to search for text in all PDF files within a folder, with click-to-open functionality to view matches at the specific page. Features intelligent background caching for optimized performance.
 
+**Author**: DL1KLF  
+**Date**: 2026-04-05
+
 ## Features
 
 - **Fast Text Search**: Search across all PDFs in a folder (recursive)

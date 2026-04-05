@@ -131,7 +131,11 @@ def create_gui(default_folder=None):
 
     # Title
     title_label = tk.Label(root, text="PDF Search Tool", font=("Helvetica", 16, "bold"), bg="#f0f0f0")
-    title_label.pack(pady=10)
+    title_label.pack(pady=(10, 0))
+    
+    # Author note
+    author_label = tk.Label(root, text="by DL1KLF, 2026-04-05", font=("Helvetica", 10), bg="#f0f0f0")
+    author_label.pack(pady=(0, 10))
 
     # Folder selection frame
     folder_frame = tk.Frame(root, bg="#f0f0f0")
